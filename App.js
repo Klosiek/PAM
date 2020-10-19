@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { useState } from 'react';
-import { HomeScreen, TextEditor } from './Views/Laboratorium1/FirstApp';
+import { HomeScreen, TextEditor, Converter } from './Views/Laboratorium1/FirstApp';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -21,6 +21,10 @@ export default function App() {
         <Stack.Screen
           name="TextEditor"
           component={TextEditor}
+        />
+        <Stack.Screen
+          name="Converter"
+          component={Converter}
         />
       </Stack.Navigator>
     </NavigationContainer >
