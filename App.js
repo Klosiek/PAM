@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { useState } from 'react';
+import { HomeScreen, TextEditor } from './Views/Laboratorium1/FirstApp';
 
 export default function App() {
+  const Stack = createStackNavigator();
+
+  function calculateFarenheitFromCelcius(celciusValue) {
+    return (celciusValue * 9) / 5 + 32;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // Laboratorium 1 - zad. 1
+    < NavigationContainer >
+      <Stack.Navigator >
+        <Stack.Screen
+          name="To jest nasz własny MIDlet"
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name="TextEditor"
+          component={TextEditor}
+        />
+      </Stack.Navigator>
+    </NavigationContainer >
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
