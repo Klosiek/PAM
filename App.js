@@ -1,12 +1,15 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
-import {
-  HomeScreen,
-  TextEditor,
-  Converter,
-} from "./Views/Laboratorium1/FirstApp";
-import { Lab2_1 } from "./Views/Laboratorium2/Lab2";
+// import {
+//   HomeScreen,
+//   TextEditor,
+//   Converter,
+// } from "./Views/Laboratorium1/FirstApp";
+import HomeScreen from "./Views/Laboratorium2/HomeScreen";
+import { Lab2_1 } from "./Views/Laboratorium2/Lab2_1";
+import { Lab2_2 } from "./Views/Laboratorium2/Lab2_2";
+import { Lab3_2 } from "./Views/Laboratorium3/Lab3_2";
 
 // Laboratorium 1 - zad. 1
 // export default function App() {
@@ -33,10 +36,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="HomeScreen" component={Lab2_1} />
-        {/* <Stack.Screen name="Wyliczanie pierwiastka" component={Lab2_1} /> */}
-        {/* <Stack.Screen name="Losowe wypełnianie tablicy" component={Lab2_2} /> */}
-        {/* <Stack.Screen name="Zgadywanka" component={Lab2_3} /> */}
+        <Stack.Screen
+          name="Hangman"
+          options={{ title: "Hangman" }}
+          component={Lab3_2}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
